@@ -1,0 +1,49 @@
+using System;
+
+
+namespace LinearSearchExample
+{
+    /*
+        Linear Search : is a straightForward algorithm that checks every element in a list or array until it finds the target value
+            it will return Index if find
+            it will return -1    if not find
+    */
+
+    // Method to perform lieaner search
+   
+    internal class Program
+    {
+        static int LinnearSearch(int[] Arr, int ValueForSearch)
+        {
+            int length = Arr.Length;
+            for (int i = 0; i < length; i++)
+            {
+                // Return the index of the element if found
+                if (Arr[i] == ValueForSearch)
+                    return i;
+            }
+            // Return -1 if the element is not found
+            return -1;
+        }
+
+        static void Main(string[] args)
+        {
+            int[] arr = { 65, 26, 4, 15, 41, 56, 154, 8, 1, 4, 5 };
+            int X = 4; //Element to be searched
+
+
+            Console.WriteLine("Original Array : ");
+            foreach (int num in arr)
+                Console.Write(num + " , ");
+
+            int Result = LinnearSearch(arr, X);
+            if (Result == 0)
+                Console.WriteLine("\n\nElement not found in the array!");
+            else
+                Console.WriteLine("\n\nElement found at index : " + Result);
+
+            Console.ReadKey();
+
+        }
+    }
+}
